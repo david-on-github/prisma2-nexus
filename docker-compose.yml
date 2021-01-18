@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - '${POSTGRES_EXPOSE_PORT}:${POSTGRES_PORT}'
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - prisma-db:/var/lib/postgresql/data
+volumes:
+  prisma-db: ~
