@@ -25,7 +25,9 @@ export const UserQuery2 = extendType({
       type: nullable(User2),
       args: { name: nonNull(stringArg()) },
       resolve: (root, args, ctx) => {
-        return ctx.prisma.user.findUnique({ where: { id: args.id } })
+        console.log(args)
+        console.log(ctx.test)
+        throw new Error('Method not implemented')
       },
     })
   },
